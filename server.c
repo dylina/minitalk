@@ -6,17 +6,16 @@
 /*   By: dgorceac <dgorceac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 13:45:07 by dgorceac          #+#    #+#             */
-/*   Updated: 2025/09/16 15:35:43 by dgorceac         ###   ########.fr       */
+/*   Updated: 2025/09/16 15:56:01 by dgorceac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-
 void	signal_handler(int signal)
 {
-	static unsigned char current_char;
-	static int bit_index;
+	static unsigned char	current_char;
+	static int				bit_index;
 
 	current_char |= (signal == SIGUSR1);
 	bit_index++;
@@ -35,7 +34,6 @@ void	signal_handler(int signal)
 
 int	main(void)
 {
-
 	ft_printf("PID = %d\n", getpid());
 	signal(SIGUSR1, signal_handler);
 	signal(SIGUSR2, signal_handler);

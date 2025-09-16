@@ -6,12 +6,11 @@
 /*   By: dgorceac <dgorceac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 12:42:24 by dgorceac          #+#    #+#             */
-/*   Updated: 2025/09/16 15:31:59 by dgorceac         ###   ########.fr       */
+/*   Updated: 2025/09/16 15:56:29 by dgorceac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
-
 
 int	ft_atoi(const char *nptr)
 {
