@@ -6,7 +6,7 @@
 /*   By: dgorceac <dgorceac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 13:44:38 by dgorceac          #+#    #+#             */
-/*   Updated: 2025/09/16 15:53:18 by dgorceac         ###   ########.fr       */
+/*   Updated: 2025/10/03 18:19:42 by dgorceac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,16 @@
 void	send_signal(int pid, unsigned char character)
 {
 	int				i;
-	unsigned char	temp_char;
 
 	i = 8;
-	temp_char = character;
 	while (i > 0)
 	{
 		i--;
-		temp_char = character >> i;
-		if (temp_char % 2 == 0)
-			kill(pid, SIGUSR2);
-		else
+		if ((character >> i) & 1)
 			kill(pid, SIGUSR1);
-		usleep(42);
+		else
+			kill(pid, SIGUSR2);
+		usleep(1000);
 	}
 }
 
