@@ -6,7 +6,7 @@
 /*   By: dgorceac <dgorceac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 13:45:07 by dgorceac          #+#    #+#             */
-/*   Updated: 2025/09/16 15:56:01 by dgorceac         ###   ########.fr       */
+/*   Updated: 2025/10/03 18:31:00 by dgorceac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void	signal_handler(int signal)
 	static unsigned char	current_char;
 	static int				bit_index;
 
-	current_char |= (signal == SIGUSR1);
+	if (signal == SIGUSR1)
+		current_char |= 1;
+	else
+		current_char |= 0;
 	bit_index++;
 	if (bit_index == 8)
 	{
