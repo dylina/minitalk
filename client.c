@@ -6,7 +6,7 @@
 /*   By: dgorceac <dgorceac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 13:44:38 by dgorceac          #+#    #+#             */
-/*   Updated: 2025/10/03 18:19:42 by dgorceac         ###   ########.fr       */
+/*   Updated: 2025/10/06 09:16:34 by dgorceac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,11 @@ int	main(int argc, char **argv)
 		exit (0);
 	}
 	server_pid = ft_atoi(argv[1]);
+	if (server_pid <= 0)
+	{
+		ft_printf("Attention: Please ensure you are using the correct PID");
+		exit (0);
+	}
 	message = argv[2];
 	i = 0;
 	while (message[i])
